@@ -16,7 +16,7 @@ export default function Navbar() {
   const user= session?.user;
   const router = useRouter()
    
-  console.log(user, 'infoooooooooooooooooo')  
+  // console.log(user, 'infoooooooooooooooooo')  
 
   const handleSignOut = async ()=>{
     await authClient.signOut({

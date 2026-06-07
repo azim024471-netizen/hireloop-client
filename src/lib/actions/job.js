@@ -1,5 +1,7 @@
 'use server'
 
+import { serverMutation } from "../coreFunction/server";
+
 const baseUrl= process.env.NEXT_PUBLIC_BASE_URL;
 
 export const createJob = async(newJobData)=>{
@@ -14,4 +16,8 @@ export const createJob = async(newJobData)=>{
     });
 
     return res.json();
+}
+
+const x = async (newJobData)=>{
+    return serverMutation()
 }

@@ -6,11 +6,11 @@ import Link from "next/link";
 
 export function DashboardSideBar() {
   const navItems = [
-    {icon: House, label: "Home" , link: "/"},
-    {icon: Magnifier, label: "Search", link: "/"},
+    {icon: House, label: "Home" , link: "/dashboard/recruiter"},
+    {icon: Magnifier, label: "Company", link: "/dashboard/recruiter/company"},
     {icon: Bell, label: "Notifications", link:'/'},
-    {icon: Envelope, label: "New Jobs", link: "/dashboard/recruiter/jobs/new"},
-    {icon: Person, label: "Profile" , link: "/"},
+    {icon: Envelope, label: "Post Jobs", link: "/dashboard/recruiter/jobs/new"},
+    {icon: Person, label: "Jobs" , link: "/dashboard/recruiter/jobs"},
     {icon: Gear, label: "Settings" , link: "/"},
   ];
 

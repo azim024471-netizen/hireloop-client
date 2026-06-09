@@ -1,36 +1,20 @@
-// import { Button } from '@heroui/react';
-// import React from 'react';
-
-// const JobApply = ({job , applicant}) => {
-//     return (
-//         <div> 
-
-//             <Button>Apply Now</Button>
-//         </div>
-//     );
-// };
-
-// export default JobApply;
-
-
-
 
 
 'use client';
 import React, { useState } from 'react';
-// Hero UI Components (v3.1.0 atomic anatomy)
 import { Form, Button, TextField, Label, Input, Description, FieldError } from '@heroui/react';
-// Gravity UI Icons for a polished look
 import { ArrowRight, Link, FileText, LayoutHeaderCells } from '@gravity-ui/icons';
 import { submitApplication } from '@/lib/actions/application';
-// import { submitApplication } from '@/lib/actions/applications';
 
 const JobApply = ({ job, applicant }) => {
+
+    
     const [formData, setFormData] = useState({
         resumeLink: '',
         portfolioLink: '',
         additionalNotes: ''
     });
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -40,10 +24,11 @@ const JobApply = ({ job, applicant }) => {
         }));
     };
 
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Combine the pre-existing job/applicant data with the new form data
         const submissionData = {
             jobId: job?._id,
             jobTitle: job?.jobTitle,
@@ -65,7 +50,6 @@ const JobApply = ({ job, applicant }) => {
 
     return (
         <div className="max-w-xl mx-auto p-6 bg-white dark:bg-zinc-900 rounded-xl shadow-sm border border-zinc-200 dark:border-zinc-800">
-            {/* Header Section */}
             <div className="mb-6">
                 <span className="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
                     Application Form

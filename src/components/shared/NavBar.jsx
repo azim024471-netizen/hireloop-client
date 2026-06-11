@@ -32,6 +32,21 @@ export default function Navbar() {
     { name: 'Company', href: '/company' },
     { name: 'Pricing', href: '/pricing' },
   ];
+    
+  const dashboardLink = {
+     seeker : "/dashboard/seeker",
+     recruiter : "/dashboard/recruiter",
+     admin: "/dashboard/admin"
+  }
+
+  if(user?.email){
+    navLinks.push({
+      name:'Dashboard',
+     href: dashboardLink[user.role || 'seeker']
+    })
+  }
+    
+
 
   return (
     <header className="sticky top-0 z-50 w-full px-4 py-5">

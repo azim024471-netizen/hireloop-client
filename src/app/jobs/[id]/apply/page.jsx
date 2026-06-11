@@ -139,13 +139,17 @@ import { getApplicationsByApplicant } from '@/lib/api/application';
 import { getPlan } from '@/lib/api/plan';
 import { getJobById } from '@/lib/api/jobs';
 import JobApply from './JobApply';
+
 import { getsession } from '@/lib/coreFunction/session';
 
 const ApplyPage = async ({ params }) => {
     const { id } = await params;
 
     const user = await getsession();
+
     console.log('Current User Session:', user);
+
+
     if (!user) {
         redirect(`/auth/signin?redirect=/jobs/${id}/apply`);
     }
@@ -179,7 +183,7 @@ const ApplyPage = async ({ params }) => {
 
     console.log(plan, 'form apply page')
 
-    console.log(user, 'fonohfowhohrwophrpohyorw')
+    // console.log(user, 'fonohfowhohrwophrpohyorw')
     
     const job = await getJobById(id);
 

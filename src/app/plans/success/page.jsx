@@ -2,6 +2,8 @@ import { stripe } from '@/lib/stripe';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { CircleCheckBig } from 'lucide-react';
+import { email } from 'better-auth';
+import { createSubcribtion } from '@/lib/actions/subcribtion';
 
 export default async function Success({ searchParams }) {
   const { session_id } = await searchParams;
@@ -13,6 +15,7 @@ export default async function Success({ searchParams }) {
   const {
     status,
     customer_details: { email: customerEmail },
+    metadata
   } = await stripe.checkout.sessions.retrieve(session_id, {
     expand: ['line_items', 'payment_intent'],
   });
@@ -22,6 +25,17 @@ export default async function Success({ searchParams }) {
   }
 
   if (status === 'complete') {
+    
+    const subsInfo ={
+       email : customerEmail,
+       planId : metadata.planId
+    }
+
+    const result =  await createSubcribtion(subsInfo)
+
+    console.log(result)
+
+
     return (
       <div className="min-h-screen bg-[#09090B] px-4 flex items-center justify-center">
         <div className="w-full max-w-2xl rounded-3xl border border-zinc-800 bg-zinc-950 p-10 text-center shadow-2xl">

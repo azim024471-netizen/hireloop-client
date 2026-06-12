@@ -10,3 +10,8 @@ export const getLoggedInRecruiterCompany = async () => {
     const user = await getsession();
     return getRecruiterCompany(user?.id);
 }
+
+
+export const getCompanies =async ()=>{
+    return serverFetch(`/api/companies`)
+}

@@ -140,7 +140,7 @@ export default function SignupPage() {
                                     <Label>Job Seeker</Label>
                                 </Radio.Content>
                             </Radio>
-                            <Radio value="rucruiter">
+                            <Radio value="recruiter">
                                 <Radio.Control>
                                     <Radio.Indicator />
                                 </Radio.Control>

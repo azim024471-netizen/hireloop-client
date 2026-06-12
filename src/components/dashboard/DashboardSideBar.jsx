@@ -75,7 +75,7 @@ const setNavLinks={
   admin : adminItems
 }
 
-console.log(user, 'from  side bar')
+// console.log(user, 'from  side bar')
 
 
 const navItems = setNavLinks[user?.role || 'seeker'];

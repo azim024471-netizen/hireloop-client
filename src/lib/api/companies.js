@@ -1,5 +1,5 @@
 
-import { serverFetch } from "../coreFunction/server";
+import { protectedFetch, serverFetch } from "../coreFunction/server";
 import { getsession } from "../coreFunction/session";
 
 export const getRecruiterCompany = async (recruiterId) => {
@@ -13,5 +13,5 @@ export const getLoggedInRecruiterCompany = async () => {
 
 
 export const getCompanies =async ()=>{
-    return serverFetch(`/api/companies`)
+    return protectedFetch(`/api/companies`)
 }
